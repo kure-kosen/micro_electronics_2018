@@ -5,7 +5,6 @@
 #include <LiquidCrystal.h>
 LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
 int k = 1;
-String out;
 
 void setup() {
   Serial.begin(9600);
