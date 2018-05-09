@@ -15,17 +15,11 @@ void setup() {
 
 void loop() {
   read_val = analogRead(1);
-  v = read_val * float(5) / float(1023);
+  v = read_val * 5.0 / 1023.0;
   r = (10000.0*v)/(5.0 - v);
-  t = float(1)/(log(r/float(10000))/float(3380)+(float(1)/float(297)));
-  lcd.print(t - 273);
+  t = 1.0/(log(r/10000.0)/3380.0+(1.0/297.0)) - 273.0;
+  lcd.print(t);
 
-  Serial.println(read_val);
-  Serial.println(v);
-  Serial.println(r);
-  Serial.println(t);
-  Serial.println();
-  
   delay(500);
   lcd.clear();
 }
